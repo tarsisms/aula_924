@@ -1,5 +1,5 @@
 
-import 'package:aula_924/home_page.dart';
+import 'package:aula_924/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
