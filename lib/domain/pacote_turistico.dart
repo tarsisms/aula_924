@@ -7,10 +7,12 @@ class PacoteTuristico {
   final int numParcelas;
   final int desconto;
   final String transporte;
+  final String validade;
   final double precoAtual;
   final double precoAntigo;
 
-  PacoteTuristico( {
+  PacoteTuristico({
+    required this.validade,
     required this.imagem,
     required this.titulo,
     required this.cidade,
