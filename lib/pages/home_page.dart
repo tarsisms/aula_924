@@ -19,80 +19,81 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Color(0xFF10397B),
-        title: Text(
+        title: const Text(
           'Pesquisar',
           style: TextStyle(fontSize: 24),
         ),
       ),
       backgroundColor: Colors.grey[100],
       body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ListView(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          const Text(
-                            'Tops destinos mais buscados',
-                            style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Text(
+                          'Tops destinos mais buscados',
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
-                          const Text(
-                            'Corre que tá rolando muita promoção',
+                        ),
+                        const Text(
+                          'Corre que tá rolando muita promoção',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'EU QUERO!',
                             style: TextStyle(
                               fontSize: 15,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           ),
-                          const SizedBox(height: 16),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'EU QUERO!',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
-                              ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFF8FF04),
-                            ),
-                          )
-                        ],
-                      ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFF8FF04),
+                          ),
+                        )
+                      ],
                     ),
-                    const SizedBox(width: 24),
-                    const Placeholder(
-                      fallbackHeight: 150,
-                      fallbackWidth: 100,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(width: 24),
+                  const Placeholder(
+                    fallbackHeight: 150,
+                    fallbackWidth: 100,
+                    color: Colors.white,
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
-              buildListView()
-            ],
-          )),
+            ),
+            const SizedBox(height: 16),
+            buildListView()
+          ],
+        ),
+      ),
     );
   }
 
   buildListView() {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: list.length,
       itemBuilder: (context, index) {
         return CardPacoteTuristico(

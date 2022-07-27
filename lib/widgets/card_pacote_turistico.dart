@@ -50,25 +50,47 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
                   const SizedBox(height: 8),
                   Text(
                     widget.pacoteTuristico.transporte,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    '${widget.pacoteTuristico.numDiarias} Diárias ${widget.pacoteTuristico.numPessoas} Pessoa',
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
+                  Wrap(
+                    children: [
+                      const Icon(Icons.wb_sunny_outlined, size: 20),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${widget.pacoteTuristico.numDiarias} Diárias',
+                        style: const TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(width: 4),
+                      Row(
+                        children: [
+                          const Icon(Icons.person, size: 20),
+                          const SizedBox(width: 4),
+                          Text(
+                            '${widget.pacoteTuristico.numPessoas} Pessoas',
+                            style: const TextStyle(
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                   const SizedBox(height: 8),
                   Text('A partir de R\$ ${widget.pacoteTuristico.precoAntigo}'),
-                  Text(
-                    'R\$ ${widget.pacoteTuristico.precoAtual}',
-                    style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFFFD6C00)),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'R\$ ${widget.pacoteTuristico.precoAtual}',
+                      style: const TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFFD6C00)),
+                    ),
                   ),
                 ],
               ),
@@ -84,7 +106,14 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
       borderRadius: const BorderRadius.vertical(
         top: Radius.circular(8),
       ),
-      child: Image.network(imagem),
+      child: Container(
+        color: Colors.amber,
+        height: 130,
+        child: Image.network(
+          imagem,
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }
