@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     const MaterialApp(
-      home: GridViewPage()
+      home: GridViewPage(),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
